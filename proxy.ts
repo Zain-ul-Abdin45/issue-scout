@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 // Simple shared-password gate. Cron and API routes carry their own
 // CRON_SECRET bearer check and are excluded here so Vercel Cron can call them.
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   if (
